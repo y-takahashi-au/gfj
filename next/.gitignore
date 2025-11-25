@@ -39,3 +39,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Intlayer
+.intlayer
+
+
+# lockfiles (removed to make intlayer test easier)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+bun.lock

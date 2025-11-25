@@ -65,6 +65,19 @@ services:
     depends_on:
       - strapi
 
+  nginx:
+    container_name: nginx
+    command: sleep infinity
+    image: nginx:1.29
+    volumes:
+      - ./next:/opt/app
+    ports:
+      - "3000:3000"
+    networks:
+      - strapi
+    depends_on:
+      - strapi
+
 volumes:
   strapi-data:
 
