@@ -1,6 +1,7 @@
 import { type NextPageIntlayer } from "next-intlayer";
 import { getLocaleName, Locales, type LocalesValues } from "intlayer";
 import Image from "next/image";
+import { useLocaleSearch } from "@/components/LocaleSwitcher/UseLocaleSearch";
 
 const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL as string;
 
@@ -42,7 +43,9 @@ export type RichTextBlock = {
   children: { text: string; type: string }[];
 };
 async function getMember(locale: string): Promise<Member[]> {
-  console.log(Object.values(Locales.ALL_LOCALES));
+  
+  console.log(`${STRAPI_URL}/api/members?locale=${locale}&populate=headshot&sort=order`);
+  
   const res = await fetch(
     `${STRAPI_URL}/api/members?locale=${locale}&populate=headshot&sort=order`,
     {
@@ -62,7 +65,6 @@ async function getMember(locale: string): Promise<Member[]> {
 const Page: NextPageIntlayer = async ({ params }) => {
   const { locale } = await params;
   const members = await getMember(locale);
-  console.log();
 
   return (
     <main className="p-8">

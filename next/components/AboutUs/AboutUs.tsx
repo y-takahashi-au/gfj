@@ -1,9 +1,6 @@
-"use client";
 
-import { getHTMLTextDir, getLocaleName, getLocalizedUrl } from "intlayer";
-import Link from "next/link";
-import { useIntlayer, useLocale, useLocaleStorage } from "next-intlayer";
-import { type FC, useRef, useState } from "react";
+import { useIntlayer } from "next-intlayer/server";
+import { type FC } from "react";
 
 export const AboutUs: FC = () => {
   const content = useIntlayer("about-us");

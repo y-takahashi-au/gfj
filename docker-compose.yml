@@ -58,6 +58,7 @@ services:
     image: next:latest
     volumes:
       - ./next:/opt/app
+      - next-out:/workspace/out
     ports:
       - "3000:3000"
     networks:
@@ -70,16 +71,17 @@ services:
     command: sleep infinity
     image: nginx:1.29
     volumes:
-      - ./next:/opt/app
+      - next-out:/usr/share/nginx/html
     ports:
-      - "3000:3000"
+      - "8080:80"
     networks:
       - strapi
     depends_on:
-      - strapi
+      - next
 
 volumes:
   strapi-data:
+  next-out:
 
 networks:
   strapi:

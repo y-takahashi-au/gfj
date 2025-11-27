@@ -1,6 +1,6 @@
-import Fuse, { type IFuseOptions } from "fuse.js";
-import { getLocaleName, Locales, type LocalesValues } from "intlayer";
-import { useCallback, useMemo, useState } from "react";
+import Fuse, { type IFuseOptions } from 'fuse.js';
+import { getLocaleName, Locales, type LocalesValues } from 'intlayer';
+import { useCallback, useMemo, useState } from 'react';
 
 type MultilingualAvailableLocales = {
   locale: LocalesValues;
@@ -37,10 +37,10 @@ export const useLocaleSearch = (
   const fuse = useMemo(() => {
     const fuseOptions: IFuseOptions<MultilingualAvailableLocales> = {
       keys: [
-        { name: "ownLocaleName", weight: 0.4 },
-        { name: "englishName", weight: 0.2 },
-        { name: "currentLocaleName", weight: 0.2 },
-        { name: "locale", weight: 0.2 },
+        { name: 'ownLocaleName', weight: 0.4 },
+        { name: 'englishName', weight: 0.2 },
+        { name: 'currentLocaleName', weight: 0.2 },
+        { name: 'locale', weight: 0.2 },
       ],
       threshold: 0.02, // Defines how fuzzy the matching should be (lower is more strict)
     };

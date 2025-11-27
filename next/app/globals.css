@@ -27,10 +27,10 @@ body {
 
 @layer utilities {
   .header-bg {
-    background-image: url("/header2.svg");
+    /* background-image: url("/header2.svg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center; */
     max-width: 80rem;
   }
   .earth-icon {

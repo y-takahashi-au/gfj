@@ -9,7 +9,7 @@ import {
   IntlayerClientProvider,
 } from "next-intlayer";
 import { type FC, useState } from "react";
-import { useLocaleSearch } from "./UseLocaleSearch";
+import { useLocaleSearch } from "@/components/LocaleSwitcher/UseLocaleSearch";
 
 export const LocaleSwitcher: FC = () => {
   const { localeSwitcherLabel } = useIntlayer("locale-switcher");

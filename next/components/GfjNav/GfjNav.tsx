@@ -14,11 +14,11 @@ const GfjNavContent: FC = () => {
 
   return (
     //<nav className={twMerge(clsx("header-bg text-lg font-bold", className))}>
-    <nav className="header-bg text-lg font-bold nav-menu  border border-gray-200 rounded-b-2xl shadow-sm">
+    <nav className="header-bg text-lg font-bold nav-menu border border-gray-200 rounded-b-2xl shadow-sm">
       <ul className="flex gap-4 h-full">
         <li className="flex-1 flex items-center justify-center">
           <a href="/">
-            <img src="/flag.svg" alt="" className="earth-icon" />
+            <img src="/flag.png" alt="" className="earth-icon" />
           </a>
         </li>
         <li className="flex-1 flex items-center justify-center">

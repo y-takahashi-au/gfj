@@ -1,7 +1,14 @@
 import Image from "next/image";
 import { IntlayerClientProvider, type NextPageIntlayer } from "next-intlayer";
 import { IntlayerServerProvider, useIntlayer } from "next-intlayer/server";
-import type { FC } from "react";
+import type {
+  FC,
+  JSXElementConstructor,
+  Key,
+  ReactElement,
+  ReactNode,
+  ReactPortal,
+} from "react";
 import { AboutUs } from "@/components/AboutUs/AboutUs";
 
 const PageContent: FC = () => {
@@ -25,11 +32,11 @@ const PageContent: FC = () => {
         {content.main.mission.title.value}
       </h5>
       <ul className="list-disc pl-6 space-y-2">
-        {tests.map((item, index) => (
+        {tests.map((item: { value: string }, index: Key) => (
           <li key={index}>{item.value}</li>
         ))}
       </ul>
-      {descriptions.map((description, index) => (
+      {descriptions.map((description: { value: string }, index: Key) => (
         <p key={index} className="pt-5">
           {description.value}
         </p>

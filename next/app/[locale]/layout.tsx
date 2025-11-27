@@ -10,10 +10,10 @@ const LocaleLayout: NextLayoutIntlayer = async ({ children, params }) => {
   return (
     <html lang={locale} dir={getHTMLTextDir(locale)}>
       <body className={locale === "ja" ? "font-jp" : "font-en"}>
-        {/* <IntlayerServerProvider locale={locale}> */}
-        {/* <GfjNav /> */}
+        <IntlayerServerProvider locale={locale}>
+        <GfjNav />
         <div className="pt-16 mx-auto mx-2 max-w-4xl">{children}</div>
-        {/* </IntlayerServerProvider> */}
+        </IntlayerServerProvider>
       </body>
     </html>
   );
