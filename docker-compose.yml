@@ -2,8 +2,7 @@ services:
   strapi:
     container_name: strapi
     build: 
-      context: ./strapi
-      dockerfile: Dockerfile
+      dockerfile: StrapiDockerfile
     image: strapi:latest
     env_file: .env
     environment:
@@ -53,8 +52,7 @@ services:
     container_name: next
     command: sleep infinity
     build: 
-      context: ./next
-      dockerfile: Dockerfile
+      dockerfile: NextDockerfile
     image: next:latest
     volumes:
       - ./next:/opt/app
