@@ -42,34 +42,34 @@ export type RichTextBlock = {
   type: string; // "paragraph"など
   children: { text: string; type: string }[];
 };
-async function getMember(locale: string): Promise<Member[]> {
+// async function getMember(locale: string): Promise<Member[]> {
   
-  console.log(`${STRAPI_URL}/api/members?locale=${locale}&populate=headshot&sort=order`);
+//   console.log(`${STRAPI_URL}/api/members?locale=${locale}&populate=headshot&sort=order`);
   
-  const res = await fetch(
-    `${STRAPI_URL}/api/members?locale=${locale}&populate=headshot&sort=order`,
-    {
-      cache: "force-cache",
-    }
-  );
+//   const res = await fetch(
+//     `${STRAPI_URL}/api/members?locale=${locale}&populate=headshot&sort=order`,
+//     {
+//       cache: "force-cache",
+//     }
+//   );
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch articles");
-  }
+//   if (!res.ok) {
+//     throw new Error("Failed to fetch articles");
+//   }
 
-  const data = await res.json();
-  console.log(data.data);
-  return data.data;
-}
+//   const data = await res.json();
+//   console.log(data.data);
+//   return data.data;
+// }
 
 const Page: NextPageIntlayer = async ({ params }) => {
   const { locale } = await params;
-  const members = await getMember(locale);
+  // const members = await getMember(locale);
 
   return (
     <main className="p-8">
       <h1>Mebmer</h1>
-
+{/* 
       {members.map((member) => (
         <div key={member.id}>
           <p>{member.name}</p>
@@ -79,7 +79,7 @@ const Page: NextPageIntlayer = async ({ params }) => {
             width={100}
           />
         </div>
-      ))}
+      ))} */}
     </main>
   );
 };
